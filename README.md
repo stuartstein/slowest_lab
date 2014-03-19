@@ -7,3 +7,22 @@ To get started, create and migrate, then run `rake data:gen`.  This will take ab
 I suggest you start by optimizing the user page.  Go to /users/5, look at the logs created by that, and bring it down to below 100ms.  Right now the dashboard will take around 90 seconds, so save the dashboard for last.
 
 You'll need to paginate some excessive queries also.  I suggest using kaminari.
+
+USER SHOW BENCHMARKING
+
+Indexed the follower_id and followed_id
+Begin: 2618ms
+End:    984ms
+
+Includes :show with @attendances 
+Begin:  984ms
+End:    842ms
+
+Added indexes to attendances and shows
+Begin: 842ms
+End:   449ms
+
+Took out @attendances and did includes in model
+Begin: 449ms
+End:   264ms 
+

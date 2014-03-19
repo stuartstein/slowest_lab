@@ -16,5 +16,5 @@ follows <%= @user.followeds.size %> users and is followed by
 </p>
 
 <ul>
-<%= render @user.attendances %>
+<%= paginate @user.attendances %>
 </ul></h2>
